@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>MARS!</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="jumbotron text-center">
+      <h1>MARS MARS MARS!</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">REFRESH!!</a></p>
+    </div>
+  </div>
+  <div>
+    <h1>{{scrapings.title}}</h1>
+    <p>{{scrapings.summary}}</p>
+  </div>
+  <div>
+    <h1>The latest on Mars Weather</h1>
+    <p>{{scrapings.MarsWeather}}</p>
+  </div>
+  <div>
+    <h2>Featured Image</h2>
+  </div>
+  <div class = "row">
+    <div class = "col-8">
+      <p>{{scrapings.FIURL}}</p>
+      <img src = "{{scrapings.FIURL}}" alt = "featured">
+    </div>
+    <div class="col-4">
+      <table>
+        {{scrapings.MarsTable}}
+      </table>
+    </div>
+  </div>
+  <div> 
+      {% for img in scrapings.MarsImages %}
+      {{ scrapings.MarsImages.title }}
+      <img src = "{{scrapings.MarsImages.img_url}}">
+      {% endfor %}
+  </div>
+  <div>
+    
+  </div>
+</body>
+
+</html>
+
